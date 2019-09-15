@@ -1,0 +1,117 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h3><center>Battery and Power</center></h3>
+
+<br><br>
+
+<div class="container">
+
+  <div class="accordion" id="accordionExample">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h2 class="mb-0">
+        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Resolve Hardware Issues With Built-in and Online Diagnostics (ePSA or PSA Error Codes)
+        </button>
+      </h2>
+    </div>
+
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+      <div class="card-body">
+        When your computer or Windows Tablet does not seem to be working correctly, diagnostics are available to help you identify what the issue may be, and provide you troubleshooting steps to help resolve the issue.
+        <br><br>
+        Dell offers diagnostics for different situations.<br>
+        <ui>
+          <li>When the computer cannot boot into the operating system (fully or not at all) or cannot access the Internet.
+In this situation the ePSA diagnostics should be used. The ePSA diagnostics test the hardware at a functional level before the operating system is loaded. For more information, refer to the What are the ePSA and PSA diagnostics? and How to Enter the Built-in Diagnostics (ePSA and PSA) sections.</li><br>
+          <li>When the computer does boot into the operating system and can access the Internet.
+In this situation the SupportAssist diagnostics should be used. SupportAssist runs within the operating system environment and can test high-end functions related to computer components. for more information refer to the How to run the Online Diagnostics and use the Diagnostics for Troubleshooting section.</li><br>
+        </ui>
+
+        <p style=" background-color: #fffdd1; border: 1px; padding: 2px; margin-left: 20px;"> <bold>NOTE :</bold> There is no need to run an ePSA scan to validate an SupportAssist diagnostic result or vice-versa. The two scans are not equivalent.
+As example: For a graphics adapter, the ePSA diagnostics can only test the basic functionality of the graphics card. It cannot test the card's maximum settings or advanced features. The SupportAssist diagnostics however, can test the full functionality of the graphic card, including a full stress test.</p>
+
+        <a href="/articleone" type="button" class="btn btn-outline-secondary">Like</a>
+
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h2 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          How to run the Online Diagnostics and use the Diagnostics for Troubleshooting
+        </button>
+      </h2>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+      <div class="card-body">
+        When your computer or Tablet boots into Windows and connects to the internet, you can run diagnostics from the Dell Support Site.
+        <ui>
+          <li>Browse to the Dell Support Site.</li>
+          <li>Enter your Service Tag or Express Service Code Number. For help locating your Service Tag or Express Service Code, browse to the Where is the Service Tag located? page.</li>
+          <li>Touch or click the Diagnostics tab.</li>
+        </ui>
+
+        <br>
+        There are several diagnostic options:
+        <ui>
+          <li>Quick test. This may take 10-15 minutes depending on the hardware in your system.</li>
+          <li>Full Test. This may take 40 minutes or more depending on the hardware in your system.</li>
+          <li>Custom Component Test. Select the hardware test(s) you want to run and touch or click Run your test.</li>
+
+          <br>
+        </ui>
+        Refer to Dell Knowledge Base article Dell Online Diagnostic Tool - Troubleshoot your Dell PC, for more information on running the online diagnostics to help you troubleshoot issues on your computer.
+        <br>
+
+
+        <p style=" background-color: #fffdd1; border: 1px; padding: 2px; margin-left: 20px;">Note: When no issue is reported by the diagnostics, it means that no hardware issues were found. This most likely means your are having an issue with the Operating System on your computer.</p>
+
+        <a href="/articletwo" type="button" class="btn btn-outline-secondary">Like</a>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h2 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          What are the ePSA and PSA diagnostics?
+        </button>
+      </h2>
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+      <div class="card-body">
+        Dell has a suite of self-diagnostics that is of built into Notebooks, Desktops, Servers and Windows based Tablets. These are called the Dell Enhanced Pre-Boot System Assessment (ePSA) or Dell Pre-Boot System Assessment (PSA) Diagnostics.
+When you cannot boot your computer, these self-diagnostics are the first thing you should try to run. Any error codes provided by these tests can go a long way toward troubleshooting your issue.
+
+        <ui>
+          <li>When the self-diagnostics will not run at all, then there is something wrong with your hardware at a basic level.</li><br>
+          <li>When an issue is found the self-diagnostics provides the Service Tag, ePSA error and validation code (be sure to write these down), then refer to the Reference Table of ePSA, PSA Error Codes and Troubleshooting Steps section, for the meaning of the code and any additional troubleshooting steps to perform, to help resolve the issue.</li><br>
+          <li>Your hardware is working correctly when no issue is found by the diagnostics. This most likely means your are having an issue with the Operating System on your computer.</li><br>
+        </ui>
+
+        <div style=" background-color: #fffdd1; border: 1px; padding: 2px; margin-left: 20px;">
+          <p> NOTE : The error code the self-diagnostics tool provides, is formatted as four numbers (1000 or 2000), and then another set of four numbers.
+When you have another code, either:
+
+        <ui>
+          <li>Rerun the self-diagnostics, be sure to write down the Service Tag, ePSA error and validation code as shown.</li>
+          <li>Refer to Dell knowledge Base article Error Codes on Dell Commercial and Consumer products.</li>
+        </ui>
+
+        </p>
+        </div>
+
+        <a href="/articlethree" type="button" class="btn btn-outline-secondary">Like</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+
+{% endblock content %}

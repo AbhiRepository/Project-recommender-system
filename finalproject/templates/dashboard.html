@@ -1,0 +1,56 @@
+{% extends "home_layout.html" %}
+{% block content %}
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script src="http://static.fusioncharts.com/code/latest/fusioncharts.js"></script>
+  <script type="text/javascript" src="./index.js"></script>
+
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+  	<div id="chart-container">
+    	<p>The chart will render here!</p>
+  	</div>
+  </div>
+</body>
+<script type="text/javascript">
+	var spreadsheetId = "1DY__Ff7EXHIDfXvKR8mi1W0frprnhwBvEGnaVo0rbbc",
+  url = "https://spreadsheets.google.com/feeds/list/" +
+  spreadsheetId +
+  "/od6/public/basic?alt=json";
+
+$.get({
+  url: url,
+  success: function(response) {
+    var data = response.feed.entry,
+      len = data.length,
+      i = 0,
+      parsedData = [];
+
+    for (i = 0; i < len; i++) {
+      parsedData.push({
+        label: data[i].title.$t,
+        value: data[i].content.$t.replace('complaints: ', '')
+
+
+      });
+    }
+
+    new FusionCharts({
+      type: 'doughnut3d',
+      renderAt: 'chart-container',
+      width: '100%',
+      height: '300',
+      dataFormat: 'json',
+      dataSource: {
+        "chart": {
+          "caption": "Product Complaints",
+          "yAxisName": "Number of Complaints",
+        },
+        "data": parsedData
+      }
+    }).render();
+  }
+});
+</script>
+{% endblock %}

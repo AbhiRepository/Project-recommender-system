@@ -1,0 +1,124 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h3><center></center></h3>
+
+<br><br>
+
+<div class="container">
+
+  <div class="accordion" id="accordionExample">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h2 class="mb-0">
+        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+          Check the audio ports for damage and clean the ports
+        </button>
+      </h2>
+    </div>
+
+    <div id="collapseFive" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+      <div class="card-body">
+        Audio performance issues may occur if there is any type of damage caused to the audio cables or the audio ports on the PC. You may experience symptoms like audio playback stops working, works intermittently, choppy or distorted audio, static noise, etc.
+        <br>
+        Audio ports are exposed to elements that may cause a build-up of dust or even physical damages. If you notice that the port or connector has dust or other contaminants, use a can of compressed air to clean the ports.
+
+        <p style=" background-color: #fffdd1; border: 1px; padding: 2px; margin-left: 20px;"> Warning: Do not use any type of cleaning solution, water or even a damp cloth. Disconnect the audio and power cable (if any) before using the can of compressed air to clean the ports.</p>
+
+        <a href="/articlefive" type="button" class="btn btn-outline-secondary">Like</a>
+
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h2 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+          Restart your Dell PC
+        </button>
+      </h2>
+    </div>
+    <div id="collapseSix" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+      <div class="card-body">
+        A simple reboot can resolve many issues almost immediately. Restarting your PC is an effective way to clear the memory (RAM) and ensure that any errant processes and services that started is shut down.
+
+        Restarting your PC closes all the applications or software running on your PC, applications running on the taskbar and dozens of other services that may be running in the background which were started by various applications.
+
+
+        <p style=" background-color: #fffdd1; border: 1px; padding: 2px; margin-left: 20px;">Warning: Before restarting your PC, ensure to bookmark open web pages, save any open documents, spreadsheets, or other unsaved work.</p>
+
+        <a href="/articlesix" type="button" class="btn btn-outline-secondary">Like</a>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h2 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+          Check the connection (external speakers or headphones/earphones)
+        </button>
+      </h2>
+    </div>
+    <div id="collapseSeven" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+      <div class="card-body">
+        Most desktop PCs come with 3 or more audio connectors and laptops usually come with one audio connector. Verify that the speaker cables are properly connected from your speaker to the PC. Audio connectors and plugs on the sound card are normally color-coded to help with proper connection (Figure x).
+
+        <ui>
+          <li>Ensure that the speakers are powered using the provided AC adapter, batteries or USB cable.</li><br>
+          <li>Connect the speaker or headphone jack directly into the 'line-out' or 'speaker-out' connector on your PC.</li><br>
+          <li>Turn up the volume using the volume knob on the speaker. Refer to the User Manual of your device on how to control the volume.
+          </li><br>
+          <li>Test the sound on your PC.</li><br>
+        </ui>
+
+        <a href="/articleseven" type="button" class="btn btn-outline-secondary">Like</a>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h2 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+          Check volume settings and set default playback device
+        </button>
+      </h2>
+    </div>
+    <div id="collapseEight" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+      <div class="card-body">
+        The default audio playback device is the device that Microsoft Windows uses to output (play) sound. When you connect speakers, earphones or headphones, bluetooth headset, or other audio devices to your PC, you can select which device you want to use by default. Windows can play audio through the speaker port, bluetooth, HDMI or DisplayPort (DP) ports. It is essential to select the correct playback device and check the volume settings, for audio playback to work on your PC.
+        <br>
+        Note: By default, Windows does not show you devices that are disabled or disconnected. If your device is not listed in the playback devices window, right-click anywhere in the blank space and click 'Show Disabled Devices' and 'Show Disconnected Devices'.
+
+        <a href="/articleeight" type="button" class="btn btn-outline-secondary">Like</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h2 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+          Check the audio ports for damage and clean the ports
+        </button>
+      </h2>
+    </div>
+    <div id="collapseNine" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+      <div class="card-body">
+        Audio performance issues may occur if there is any type of damage caused to the audio cables or the audio ports on the PC. You may experience symptoms like microphone stops working, works intermittently, choppy or distorted audio, static noise, etc.
+        <br>
+        Audio ports are exposed to elements that may cause a build-up of dust or even physical damages. If you notice that the port or connector has dust or other contaminants, use a can of compressed air to clean the ports.
+
+        <a href="/articlenine" type="button" class="btn btn-outline-secondary">Like</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</div>
+
+
+
+{% endblock content %}

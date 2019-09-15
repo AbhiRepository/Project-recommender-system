@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+
+    {% if title %}
+        <title>Flask Blog - {{ title }}</title>
+    {% else %}
+        <title>Flask Blog</title>
+    {% endif %}
+</head>
+<body>
+    <header class="site-header">
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #217bb0;">
+        <div class="container">
+          <!-- <a class="navbar-brand mr-4" href="/">DELL</a> -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarToggle">
+            <div class="navbar-nav mr-auto">
+              <a href="{{ url_for('home') }}" class="pull-left"><img src="../static/img/dell.jpg" style="height:50px; width: 65px; margin: 0; padding: 0;"></a> 
+              <!-- <a class="nav-item nav-link" href="{{ url_for('home') }}">Home</a> -->
+              <!-- <a class="nav-item nav-link" href="{{ url_for('about') }}">About</a> -->
+            </div>
+            <!-- Navbar Right Side -->
+            {% if session.Logged_in and session.username == 'admin@gmail.com' %}
+            <a class="nav-item nav-link" href="{{ url_for('dashboard') }}" style="color: white;">Dashboard</a>
+            <a class="nav-item nav-link" href="{{ url_for('logout') }}" style="color: white;">Logout</a>
+            {% else %}
+              {% if session.Logged_in %}
+              <!-- <a class="nav-item nav-link" href="{{ url_for('shop') }}" style="color: white;">Shop</a> -->
+              <a class="nav-item nav-link" href="{{ url_for('service') }}" style="color: white;">Browse</a>
+             <!--  <a class="nav-item nav-link" href="{{ url_for('feedback') }}" style="color: white;">Feedback</a> -->
+              <a class="nav-item nav-link" href="{{ url_for('rating') }}" style="color: white;">Rating</a>
+              <a class="nav-item nav-link" href="{{ url_for('logout') }}" style="color: white;">Logout</a>
+              {% else %}
+              <a class="nav-item nav-link" href="{{ url_for('login') }}" style="color: white;">Login</a>
+              <a class="nav-item nav-link" href="{{ url_for('register') }}" style="color: white;">Register</a>
+              {% endif %}
+            {% endif %}
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main role="main" class="container">
+
+      <div class="row">
+        <div class="col-md-12 justify-content-center">
+          {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for category, message in messages %}
+                <br><br>
+                <div class="alert alert-{{ category }}" >
+                  {{ message }}
+                </div>
+                <br>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+        </div>
+      </div>
+    </main>
+
+    {% block content %}
+    {% endblock %}
+
+
+
+    <!-- <script type="text/javascript">
+      /* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
+      (function(d, m){
+        var kommunicateSettings = {"appId":"55a82d81e284c867e7a05564668fdd32","popupWidget":true,"automaticChatOpenOnNavigation":true};
+        var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+        s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+        var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+        window.kommunicate = m; m._globals = kommunicateSettings;
+      })(document, window.kommunicate || {});
+  </script> -->
+
+    <script 
+    defer="true" type="text/javascript" 
+    botId="5d4454040a5e20fb1dff6f6b" 
+    class="botcopy-embedder-d7lcfheammjct" 
+    id="botcopy-embedder-d7lcfheammjct"> 
+    var s = document.createElement('script'); 
+    s.type = 'text/javascript'; s.async = true; 
+    s.src = 'https://d7lcfheammjct.cloudfront.net/js/injection.js'; 
+    var embedder = document.getElementById('botcopy-embedder-d7lcfheammjct'); 
+    embedder.parentNode.insertBefore(s, embedder); 
+</script>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <!-- jQuery first, then Bootstrap JS. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
